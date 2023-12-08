@@ -1,1 +1,1 @@
-# tasks-organizer-django
+# Tasks Organizer with Django
