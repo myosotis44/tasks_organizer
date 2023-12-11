@@ -13,9 +13,9 @@ Une application de gestion de tâches avec Python et le framework Django
 
 ## Fonctionalités
 
-[ ] Ajouter une collection  
+[x] Ajouter une collection  
 [ ] Supprimer une collection  
-[ ] Empêcher l'ajout d'une collection en doublon  
+[x] Empêcher l'ajout d'une collection en doublon  
 [ ] Ajouter une tâche (reliée à une collection)  
 [ ] Supprimer une tâche  
 [ ] Afficher les tâches d'une collection

@@ -4,7 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <p>Bienvenue sur mon application de gestion de tâches</p>
+
+    <script src="https://unpkg.com/htmx.org@1.9.9"></script>
   </head>
-  <body></body>
+  <body>
+    <p>Bienvenue sur mon application de gestion de tâches</p>
+    <h1>Collections:</h1>
+
+    <div id="collections">
+      {% for collection in collections %}
+      <h2>{{ collection.name }}</h2>
+      {% endfor %}
+    </div>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <input type="text" name="collection-name" />
+      <button
+        hx-post="{% url  'add-collection'%}"
+        hx-target="#collections"
+        hx-swap="beforeend"
+        type="submit"
+      >
+        Envoyer
+      </button>
+    </form>
+
+    <script>
+      document.body.addEventListener("htmx:responseError", function (evt) {
+        alert(evt.detail.xhr.responseText);
+      });
+    </script>
+  </body>
 </html>
